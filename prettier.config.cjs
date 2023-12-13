@@ -1,4 +1,7 @@
 // prettier.config.js
+/** @type {import("prettier").Options} */
 module.exports = {
-    plugins: [require("prettier-plugin-tailwindcss")],
-};
+    semi: false,
+    singleQuote: true,
+    plugins: ['prettier-plugin-tailwindcss'],
+}
