@@ -22,8 +22,6 @@ export const Navbar = ({
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false)
   const navbarBackground = isTopOfPage ? '' : 'bg-primary-100 drop-shadow'
 
-  console.log(isTopOfPage)
-
   return (
     <nav>
       <div
