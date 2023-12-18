@@ -13,7 +13,7 @@ export const Class = ({ name, description, image }: Props) => {
   opacity-0 translate-y-[60%] transition-all duration-500 group-hover:opacity-90 group-hover:translate-y-0`
 
   return (
-    <li className="group relative mx-5 inline-block h-[290px] w-[360px] sm:h-[380px] sm:w-[450px]">
+    <li className="group relative mx-5 inline-block h-[310px] w-[380px] sm:h-[380px] sm:w-[450px]">
       <div className={overlayStyles}>
         <p className="text-2xl">{name}</p>
         <p className="mt-5">{description}</p>
