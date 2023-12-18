@@ -43,21 +43,25 @@ export const Navbar = ({
                     page="Home"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
+                    toggleMenu={toggleMenu}
                   />
                   <Link
                     page="Benefits"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
+                    toggleMenu={toggleMenu}
                   />
                   <Link
                     page="Our Classes"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
+                    toggleMenu={toggleMenu}
                   />
                   <Link
                     page="Contact Us"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
+                    toggleMenu={toggleMenu}
                   />
                 </div>
                 <div className={`${flexBetween} gap-8`}>
