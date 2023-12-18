@@ -22,6 +22,11 @@ export const Navbar = ({
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false)
   const navbarBackground = isTopOfPage ? '' : 'bg-primary-100 drop-shadow'
 
+  const toggleMenu = () => {
+    setIsMenuToggled(!isMenuToggled)
+    document.body.style.overflow = isMenuToggled ? 'auto' : 'hidden'
+  }
+
   return (
     <nav>
       <div
@@ -65,7 +70,7 @@ export const Navbar = ({
             ) : (
               <button
                 className="rounded-full bg-secondary-500 p-2"
-                onClick={() => setIsMenuToggled(!isMenuToggled)}
+                onClick={toggleMenu}
               >
                 <Bars3Icon className="h-6 w-6 text-white " />
               </button>
@@ -75,32 +80,36 @@ export const Navbar = ({
       </div>
       {/*  Mobile Menu */}
       {!isAboveMediumScreens && isMenuToggled && (
-        <div className="fixed bottom-0 right-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl">
+        <div className="fixed bottom-0 right-0 z-40 h-full w-full bg-primary-100 text-center drop-shadow-xl sm:w-[300px] sm:text-start">
           <div className="flex justify-end p-12">
-            <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
+            <button onClick={toggleMenu}>
               <XMarkIcon className="h-6 w-6 text-gray-400" />
             </button>
           </div>
-          <div className="ml-[33%] flex flex-col gap-10 text-2xl">
+          <div className="flex flex-col gap-10 text-2xl sm:ml-[33%] ">
             <Link
               page="Home"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
+              toggleMenu={toggleMenu}
             />
             <Link
               page="Benefits"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
+              toggleMenu={toggleMenu}
             />
             <Link
               page="Our Classes"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
+              toggleMenu={toggleMenu}
             />
             <Link
               page="Contact Us"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
+              toggleMenu={toggleMenu}
             />
           </div>
         </div>
